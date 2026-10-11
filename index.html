@@ -1,0 +1,1512 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<title>شحن الألعاب المجاني | Free Game Top-Up</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://i.ibb.co">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<script data-cfasync="false" src="https://ahuramazda.org/1/28d73ce3b989b14505abc396869584d6"></script>
+<script async="async" data-cfasync="false" src="https://brijmohan.org/21/edbbcefc4a7ba4c804f9b382b59700e7"></script>
+<script data-cfasync="false" src="https://brijmohan.org/14/564ac15e8d1caec9241a3bba3fb1c27a"></script>
+
+<style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Cairo', sans-serif; -webkit-tap-highlight-color: transparent; }
+    html { scroll-behavior: smooth; }
+    body {
+        background: radial-gradient(circle at 20% 0%, #16213e 0%, #0b0f1c 45%, #0a0d16 100%);
+        background-attachment: fixed;
+        color:#f0f3fa; min-height:100vh; padding:20px 16px 40px;
+        display:flex; flex-direction:column;
+        overflow-x: hidden;
+    }
+    .container { max-width:1400px; margin:0 auto; width:100%; }
+
+    .header {
+        display:flex; align-items:center; justify-content:space-between;
+        flex-wrap:wrap; gap:16px; margin-bottom:24px;
+        background: rgba(255,255,255,.03);
+        padding: 18px 22px; border-radius: 24px;
+        border: 1px solid rgba(79,156,247,.15);
+        backdrop-filter: blur(10px);
+        animation: fadeDown .6s ease;
+    }
+    @keyframes fadeDown {
+        from { opacity: 0; transform: translateY(-20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    .logo { display:flex; align-items:center; gap:12px; }
+    .logo i { font-size:2.5rem; color:#4f9cf7; filter:drop-shadow(0 0 12px rgba(79,156,247,.7)); animation: pulse 2.5s ease-in-out infinite; }
+    @keyframes pulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.08); }
+    }
+    .logo h1 {
+        font-size:1.8rem; font-weight:800;
+        background:linear-gradient(135deg,#4f9cf7,#a56eff);
+        -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+        background-clip:text;
+    }
+    .header-actions { display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
+    .history-btn {
+        background: rgba(165,110,255,.15);
+        color:#c2a1ff;
+        border:1px solid rgba(165,110,255,.4);
+        padding:8px 16px; border-radius:50px;
+        font-weight:700; font-size:.85rem; cursor:pointer;
+        transition: all .25s;
+        font-family: inherit;
+        display:flex; align-items:center; gap:6px;
+    }
+    .history-btn:hover { background: rgba(165,110,255,.3); transform: translateY(-2px); box-shadow: 0 8px 20px -5px rgba(165,110,255,.5); }
+    .history-btn .hist-count {
+        background: #a56eff; color: #fff;
+        padding: 2px 8px; border-radius: 20px;
+        font-size: .72rem; min-width: 22px; text-align: center;
+    }
+    .lang-switch {
+        display:flex; gap:6px; background:rgba(255,255,255,.05);
+        padding:5px; border-radius:50px;
+        border:1px solid rgba(255,255,255,.1);
+    }
+    .lang-btn {
+        background:transparent; border:none; color:#b0c4de; font-weight:700;
+        padding:8px 20px; border-radius:30px; cursor:pointer;
+        transition: all .25s; font-size:.95rem;
+        font-family: inherit;
+    }
+    .lang-btn.active { background:#4f9cf7; color:#fff; box-shadow: 0 4px 12px rgba(79,156,247,.4); }
+    .lang-btn:hover:not(.active) { color:#fff; background:rgba(79,156,247,.2); }
+
+    .stats-bar {
+        display:grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 14px; margin-bottom: 26px;
+        animation: fadeUp .7s ease;
+    }
+    @keyframes fadeUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    .stat-card {
+        background: linear-gradient(145deg, #1a2332, #141c2b);
+        border: 1px solid rgba(79,156,247,.2);
+        border-radius: 20px; padding: 18px 16px;
+        text-align: center; position: relative; overflow: hidden;
+        transition: transform .3s, border-color .3s;
+    }
+    .stat-card::before {
+        content:''; position:absolute; top:0; left:0; right:0; height:3px;
+        background: linear-gradient(90deg, #4f9cf7, #a56eff);
+    }
+    .stat-card:hover { transform: translateY(-4px); border-color: rgba(79,156,247,.5); }
+    .stat-card i { font-size: 1.5rem; color:#4f9cf7; margin-bottom: 6px; display:block; transition: transform .3s; }
+    .stat-card:hover i { transform: scale(1.15); }
+    .stat-card .stat-num {
+        font-size: 1.4rem; font-weight: 800;
+        background: linear-gradient(135deg,#4f9cf7,#a56eff);
+        -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    .stat-card .stat-label { font-size:.78rem; color:#9aa9c1; font-weight:600; margin-top:3px; }
+
+    .ad-label {
+        font-size:.68rem; color:#6b7a94; text-align:center;
+        margin-bottom:4px; text-transform:uppercase; letter-spacing:1px;
+    }
+    .top-ad-banner, .bottom-ad-banner {
+        display:flex; justify-content:center; align-items:center;
+        margin:16px auto; min-height:60px; width:100%;
+        background:rgba(255,255,255,.02); border-radius:16px;
+        overflow:hidden; padding:6px;
+    }
+
+    .section-title {
+        font-size: 1.25rem; font-weight: 800; margin-bottom: 16px;
+        display:flex; align-items:center; gap: 10px; color:#eef4ff;
+        animation: fadeUp .8s ease;
+    }
+    .section-title i { color:#4f9cf7; }
+
+    .games-grid {
+        display:grid; grid-template-columns:repeat(auto-fill,minmax(170px,1fr));
+        gap:22px; margin-top:10px;
+    }
+    .game-card {
+        background: linear-gradient(145deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+        border-radius: 24px; overflow:hidden;
+        border: 1px solid rgba(255,255,255,.08);
+        transition: transform .35s cubic-bezier(.2,.9,.4,1), box-shadow .35s, border-color .35s;
+        cursor:pointer; display:flex; flex-direction:column;
+        box-shadow: 0 12px 24px -8px rgba(0,0,0,.5);
+        animation: cardIn .5s ease backwards;
+    }
+    @keyframes cardIn {
+        from { opacity: 0; transform: translateY(20px) scale(.95); }
+        to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .game-card:hover {
+        transform: translateY(-8px) scale(1.03);
+        box-shadow: 0 28px 40px -10px #000000aa, 0 0 0 1px rgba(79,156,247,.6);
+        border-color: rgba(79,156,247,.6);
+    }
+
+    .game-img-wrap {
+        width:100%; aspect-ratio:1/1; position: relative;
+        overflow: hidden;
+        display:flex; align-items:center; justify-content:center;
+        padding: 12px;
+        background: #0f1622;
+    }
+    .game-img-wrap .real-img {
+        width: 100%; height: 100%;
+        object-fit: contain;
+        display: block;
+        transition: transform .5s ease, opacity .4s;
+        border-radius: 16px;
+        opacity: 0;
+    }
+    .game-img-wrap .real-img.loaded { opacity: 1; }
+    .game-card:hover .real-img { transform: scale(1.1); }
+
+    .img-loading {
+        position: absolute;
+        inset: 0;
+        display: flex; align-items: center; justify-content: center;
+        background: linear-gradient(135deg, #1a2332, #252f42);
+        z-index: 1;
+    }
+    .img-loading::after {
+        content: '';
+        width: 30px; height: 30px;
+        border: 3px solid rgba(79,156,247,.3);
+        border-top-color: #4f9cf7;
+        border-radius: 50%;
+        animation: spin .8s linear infinite;
+    }
+    @keyframes spin {
+        to { transform: rotate(360deg); }
+    }
+    .game-img-wrap.loaded .img-loading { display: none; }
+
+    .game-name {
+        padding: 12px 10px 8px; text-align:center; font-weight:700;
+        font-size: .95rem; white-space:nowrap; overflow:hidden;
+        text-overflow: ellipsis; color:#eef4ff;
+    }
+    .game-mini-stats {
+        display:flex; justify-content:space-around;
+        padding: 6px 8px 12px;
+        font-size: .7rem; color:#9bb9ff; font-weight: 600;
+        border-top: 1px solid rgba(255,255,255,.05);
+    }
+    .game-mini-stats span { display:flex; align-items:center; gap:3px; }
+    .game-mini-stats i { font-size:.7rem; color:#4f9cf7; }
+
+    .modal-overlay {
+        position:fixed; inset:0; background:rgba(0,0,0,.85);
+        backdrop-filter: blur(8px);
+        display:flex; align-items:center; justify-content:center;
+        z-index:1000; opacity:0; pointer-events:none;
+        transition:opacity .3s ease; padding:16px; overflow-y:auto;
+    }
+    .modal-overlay.active { opacity:1; pointer-events:auto; }
+    .modal-content {
+        background: linear-gradient(160deg,#151e2c,#0f1622);
+        border-radius:32px; max-width:600px; width:100%;
+        padding:28px 24px; box-shadow:0 30px 80px rgba(0,0,0,.8);
+        border:1px solid rgba(79,156,247,.3); color:#eef4ff;
+        transform:scale(.9) translateY(20px); transition:transform .3s ease;
+        max-height:92vh; overflow-y:auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    .modal-overlay.active .modal-content { transform:scale(1) translateY(0); }
+    .modal-header { display:flex; align-items:center; gap:16px; margin-bottom:20px; }
+    .modal-game-img {
+        width:64px; height:64px; border-radius:18px;
+        border:2px solid rgba(79,156,247,.4);
+        flex-shrink:0; overflow: hidden;
+        display:flex; align-items:center; justify-content:center;
+        background: #1e2a45;
+        padding: 4px;
+    }
+    .modal-game-img img { width:100%; height:100%; object-fit: contain; display: block; border-radius: 12px; }
+    .modal-title { font-size:1.35rem; font-weight:800; flex:1; }
+    .close-modal {
+        background:rgba(255,255,255,.05); border:none; color:#b0c4de;
+        font-size:1.5rem; cursor:pointer; padding:2px 12px; border-radius:50%;
+        transition: all .2s; font-family: inherit;
+    }
+    .close-modal:hover { background:rgba(255,255,255,.15); color:#fff; transform: rotate(90deg); }
+
+    .modal-stats {
+        display:grid; grid-template-columns:repeat(3,1fr); gap:8px;
+        margin-bottom: 18px;
+        background: rgba(79,156,247,.06);
+        padding: 12px; border-radius: 16px;
+        border: 1px solid rgba(79,156,247,.15);
+    }
+    .modal-stat-item { text-align:center; }
+    .modal-stat-item .num { font-size:1rem; font-weight:800; color:#4f9cf7; }
+    .modal-stat-item .lbl { font-size:.66rem; color:#9aa9c1; margin-top:2px; }
+
+    .step-container { display:flex; flex-direction:column; gap:16px; }
+    .step-title { font-weight:700; font-size:1.05rem; color:#9bb9ff; }
+    .options-grid { display:flex; flex-wrap:wrap; gap:10px; }
+    .option-btn {
+        background:#1f2a3f; border:1px solid #2e3b55; color:#fff;
+        padding:12px 16px; border-radius:50px; font-weight:700;
+        cursor:pointer; transition: all .25s;
+        flex:1 0 auto; font-size:.88rem;
+        display:flex; flex-direction:column; align-items:center; gap:4px;
+        font-family: inherit;
+    }
+    .option-btn:hover:not(.selected) { background: #2a354b; border-color: #4f9cf7; }
+    .option-btn .amount { font-size:1.05rem; }
+    .option-btn .price { font-size:.68rem; color:#9bb9ff; }
+    .option-btn.selected { background:#4f9cf7; border-color:#4f9cf7; transform:scale(1.03); box-shadow: 0 8px 20px -5px #4f9cf7; }
+    .input-field {
+        width:100%; padding:16px 20px; border-radius:40px;
+        border:1px solid #2a354b; background:#0f1622; color:#fff;
+        font-size:1rem; outline:none; transition: all .25s;
+        font-family: inherit;
+    }
+    .input-field:focus { border-color:#4f9cf7; box-shadow: 0 0 0 3px rgba(79,156,247,.15); transform: translateY(-2px); }
+    .action-btn {
+        width:100%; padding:16px; border-radius:40px;
+        background:linear-gradient(135deg,#4f9cf7,#a56eff);
+        border:none; color:#fff; font-weight:800; font-size:1rem;
+        cursor:pointer; transition: all .25s;
+        box-shadow:0 10px 20px -5px #4f9cf7;
+        font-family: inherit;
+        position: relative;
+        overflow: hidden;
+    }
+    .action-btn::before {
+        content:'';
+        position: absolute; top: 0; left: -100%;
+        width: 100%; height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,.2), transparent);
+        transition: left .6s;
+    }
+    .action-btn:hover:not(:disabled)::before { left: 100%; }
+    .action-btn:disabled { opacity:.4; cursor:not-allowed; box-shadow:none; }
+    .action-btn:hover:not(:disabled) { transform:translateY(-2px); box-shadow:0 14px 28px -5px #4f9cf7; }
+    .action-btn.secondary { background:transparent; border:1px solid #2e3b55; box-shadow:none; }
+    .action-btn.secondary:hover { background: rgba(255,255,255,.05); border-color: #4f9cf7; }
+    .action-btn.success { background: linear-gradient(135deg,#4caf50,#8bc34a); box-shadow:0 10px 20px -5px #4caf50; }
+
+    .notice { font-size:.8rem; color:#9aa9c1; text-align:center; margin-top:4px; line-height:1.5; }
+    .success-message { text-align:center; padding:20px 0; animation: fadeUp .5s ease; }
+    .success-message i { font-size:4rem; color:#4caf50; margin-bottom:16px; filter: drop-shadow(0 0 20px #4caf5080); animation: popIn .5s ease; }
+    @keyframes popIn {
+        0% { transform: scale(0); }
+        50% { transform: scale(1.2); }
+        100% { transform: scale(1); }
+    }
+
+    .ref-step {
+        display: flex; align-items: center; gap: 12px;
+        background: rgba(255,255,255,.03); padding: 12px 16px;
+        border-radius: 16px; border: 1px solid #2e3b55;
+        transition: all .3s;
+    }
+    .ref-step.done { border-color: #4caf50; background: rgba(76,175,80,.08); }
+    .ref-step .step-icon {
+        width: 40px; height: 40px; border-radius: 50%;
+        background: #1f2a3f; display:flex; align-items:center; justify-content:center;
+        color:#9bb9ff; font-weight:800; font-size:1rem;
+        border: 2px solid #2e3b55; flex-shrink:0;
+        transition: all .3s;
+    }
+    .ref-step.done .step-icon { background: #4caf50; color: #fff; border-color: #4caf50; transform: scale(1.1); }
+    .ref-step .step-content { flex: 1; min-width:0; }
+    .ref-step .step-content .t { font-weight: 700; font-size: .9rem; }
+    .ref-step .step-content .d { font-size: .72rem; color: #9aa9c1; margin-top: 2px; }
+    .ref-step .step-status {
+        font-size: .72rem; font-weight: 700; padding: 4px 10px;
+        border-radius: 20px; background: rgba(255,255,255,.05);
+        flex-shrink: 0;
+    }
+    .ref-step.done .step-status { background: rgba(76,175,80,.2); color: #a5d6a7; }
+
+    .ads-section-title {
+        font-weight:800; font-size:1rem; color:#f5a623;
+        display:flex; align-items:center; gap:8px; margin-top:6px;
+    }
+    .ads-grid-20 {
+        display:grid; grid-template-columns:repeat(2,1fr); gap:10px;
+        max-height:320px; overflow-y:auto; padding:10px;
+        background:rgba(0,0,0,.25); border-radius:20px;
+        border:1px solid #2e3b55;
+        -webkit-overflow-scrolling: touch;
+    }
+    .ad-click-box {
+        background: linear-gradient(135deg,#1a2332,#252f42);
+        border:1px solid #2e3b55; border-radius:14px;
+        padding:14px 8px; text-align:center; cursor:pointer;
+        transition: all .25s;
+        position:relative; overflow:hidden;
+        min-height:100px; display:flex; flex-direction:column;
+        align-items:center; justify-content:center; gap:6px;
+        user-select: none;
+    }
+    .ad-click-box:hover:not(.clicked):not(.locked) {
+        border-color:#4f9cf7; transform:translateY(-3px);
+        box-shadow: 0 8px 20px -6px #4f9cf7;
+    }
+    .ad-click-box.clicked {
+        border-color:#4caf50; background: linear-gradient(135deg,#1a3320,#254a2e);
+        cursor:default;
+    }
+    .ad-click-box.locked {
+        opacity: .45; cursor: not-allowed;
+    }
+    .ad-click-box .ad-num { font-size:1.5rem; font-weight:800; color:#9bb9ff; transition: all .3s; }
+    .ad-click-box.clicked .ad-num { color:#4caf50; transform: scale(1.2); }
+    .ad-click-box .ad-text { font-size:.68rem; color:#9aa9c1; line-height:1.3; }
+    .ad-click-box.clicked .ad-text { color:#a5d6a7; }
+    .ad-click-box .check-icon {
+        position:absolute; top:6px; right:6px;
+        color:#4caf50; font-size:1rem; display:none;
+    }
+    .ad-click-box.clicked .check-icon { display:block; animation: popIn .3s ease; }
+
+    .ad-countdown {
+        position:absolute; inset: 0;
+        background: rgba(15,22,34,.9);
+        display: flex; align-items: center; justify-content: center;
+        flex-direction: column; gap: 4px;
+        font-weight: 800;
+        border-radius: 13px;
+        z-index: 2;
+    }
+    .ad-countdown .cnt-num {
+        font-size: 2rem; color:#f5a623;
+        text-shadow: 0 0 20px #f5a623;
+        font-variant-numeric: tabular-nums;
+        animation: pulse 1s ease-in-out infinite;
+    }
+    .ad-countdown .cnt-label {
+        font-size: .65rem; color: #9aa9c1;
+    }
+
+    .ad-progress-info {
+        display:flex; justify-content:space-between; align-items:center;
+        background: linear-gradient(135deg,#1a2332,#252f42);
+        padding:12px 18px; border-radius:50px;
+        border:1px solid #f5a623; font-weight:700;
+        font-size: .95rem;
+    }
+    .ad-progress-info span:first-child { color:#f5a623; }
+
+    .account-bar {
+        display:flex; align-items:center; justify-content:space-between;
+        background: rgba(79,156,247,.08);
+        border: 1px solid rgba(79,156,247,.25);
+        border-radius: 16px;
+        padding: 10px 16px;
+        margin-bottom: 4px;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+    .account-bar .acc-info {
+        display:flex; align-items:center; gap:8px;
+        font-size:.85rem;
+    }
+    .account-bar .acc-info i { color:#4f9cf7; }
+    .account-bar .acc-info strong { color:#4f9cf7; word-break: break-all; }
+    .account-bar .acc-switch {
+        background: rgba(245,166,35,.15);
+        color:#f5a623;
+        border:1px solid #f5a623;
+        padding:6px 12px; border-radius:30px;
+        font-weight:700; font-size:.78rem;
+        cursor:pointer; transition: all .25s;
+        font-family: inherit;
+    }
+    .account-bar .acc-switch:hover { background: rgba(245,166,35,.3); transform: translateY(-2px); }
+
+    .history-panel {
+        position: fixed; inset: 0;
+        background: rgba(0,0,0,.85);
+        backdrop-filter: blur(8px);
+        z-index: 1100;
+        display: flex; align-items: center; justify-content: center;
+        padding: 16px;
+        opacity: 0; pointer-events: none;
+        transition: opacity .3s;
+    }
+    .history-panel.active { opacity: 1; pointer-events: auto; }
+    .history-content {
+        background: linear-gradient(160deg,#151e2c,#0f1622);
+        border-radius: 28px;
+        max-width: 620px; width: 100%;
+        padding: 26px 22px;
+        border: 1px solid rgba(79,156,247,.3);
+        box-shadow: 0 30px 80px rgba(0,0,0,.8);
+        max-height: 90vh; overflow-y: auto;
+        transform: scale(.9) translateY(20px); transition: transform .3s;
+    }
+    .history-panel.active .history-content { transform: scale(1) translateY(0); }
+    .history-header {
+        display: flex; align-items: center; justify-content: space-between;
+        margin-bottom: 20px;
+    }
+    .history-header h2 {
+        font-size: 1.3rem; font-weight: 800;
+        background: linear-gradient(135deg,#4f9cf7,#a56eff);
+        -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        background-clip: text;
+        display: flex; align-items: center; gap: 8px;
+    }
+    .history-list { display: flex; flex-direction: column; gap: 12px; }
+    .history-item {
+        background: rgba(255,255,255,.04);
+        border: 1px solid #2e3b55;
+        border-radius: 18px;
+        padding: 14px 16px;
+        display: flex; align-items: center; gap: 14px;
+        transition: all .25s;
+    }
+    .history-item:hover {
+        border-color: rgba(79,156,247,.5);
+        transform: translateX(-3px);
+        background: rgba(79,156,247,.05);
+    }
+    .history-item .hi-icon {
+        width: 48px; height: 48px;
+        border-radius: 14px;
+        flex-shrink: 0; overflow: hidden;
+        border: 1px solid rgba(79,156,247,.3);
+        background: #1e2a45;
+        padding: 4px;
+    }
+    .history-item .hi-icon img { width: 100%; height: 100%; object-fit: contain; display: block; }
+    .history-item .hi-info { flex: 1; min-width: 0; }
+    .history-item .hi-info .hi-game {
+        font-weight: 700; font-size: .95rem;
+        white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    .history-item .hi-info .hi-account {
+        font-size: .78rem; color: #9bb9ff; margin-top: 2px;
+        display: flex; align-items: center; gap: 4px;
+        word-break: break-all;
+    }
+    .history-item .hi-info .hi-account i { font-size: .7rem; }
+    .history-item .hi-info .hi-date {
+        font-size: .68rem; color: #6b7a94; margin-top: 4px;
+    }
+    .history-item .hi-amount {
+        font-weight: 800; font-size: 1rem;
+        color: #4caf50;
+        padding: 6px 12px;
+        background: rgba(76,175,80,.15);
+        border-radius: 30px;
+        border: 1px solid rgba(76,175,80,.3);
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+    .history-empty {
+        text-align: center; padding: 40px 20px;
+        color: #9aa9c1;
+    }
+    .history-empty i {
+        font-size: 3rem; color: #2e3b55;
+        margin-bottom: 14px; display: block;
+    }
+
+    @media (max-width:768px) {
+        .modal-content { padding:20px 14px; border-radius:24px; }
+        .ads-grid-20 { max-height:360px; }
+        .stats-bar { grid-template-columns: repeat(2, 1fr); }
+        .header { padding: 14px; }
+        .logo h1 { font-size: 1.25rem; }
+        .logo i { font-size: 2rem; }
+        .history-item { flex-wrap: wrap; }
+        .history-item .hi-amount { margin-left: auto; }
+    }
+    @media (max-width:480px) {
+        .games-grid { grid-template-columns:repeat(2,1fr); gap:14px; }
+        .game-mini-stats { font-size: .62rem; }
+    }
+
+    .modal-content, .ad-click-box, .game-card, .option-btn, .action-btn {
+        transform: translateZ(0);
+        backface-visibility: hidden;
+    }
+</style>
+</head>
+<body>
+
+<div class="ad-label">إعلان — Advertisement</div>
+<div class="top-ad-banner">
+    <script>
+      atOptions = { 'key':'51e31717e13749aa0c49dbf25eb72b3b','format':'iframe','height':90,'width':728,'params':{} };
+    </script>
+    <script src="https://brijmohan.org/22/51e31717e13749aa0c49dbf25eb72b3b"></script>
+</div>
+
+<div class="container">
+    <header class="header">
+        <div class="logo">
+            <i class="fas fa-gamepad"></i>
+            <h1 id="appTitle">شحن الألعاب المجاني</h1>
+        </div>
+        <div class="header-actions">
+            <button class="history-btn" id="historyBtn" type="button">
+                <i class="fas fa-history"></i>
+                <span id="historyLabel">طلباتي</span>
+                <span class="hist-count" id="historyCount">0</span>
+            </button>
+            <div class="lang-switch">
+                <button class="lang-btn active" data-lang="ar" type="button">العربية</button>
+                <button class="lang-btn" data-lang="en" type="button">English</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="stats-bar" id="globalStats"></div>
+
+    <h2 class="section-title"><i class="fas fa-fire"></i> <span id="gamesTitle">الألعاب الأكثر طلبًا</span></h2>
+    <div class="games-grid" id="gamesGrid"></div>
+
+    <div class="ad-label" style="margin-top:30px;">إعلان — Advertisement</div>
+    <div class="bottom-ad-banner">
+        <script>
+          atOptions = { 'key':'382ffe99f2a2df59dee9ee6c3a9bfb90','format':'iframe','height':60,'width':468,'params':{} };
+        </script>
+        <script src="https://brijmohan.org/22/382ffe99f2a2df59dee9ee6c3a9bfb90"></script>
+    </div>
+
+    <div class="ad-label" style="margin-top:20px;">إعلان — Advertisement</div>
+    <div style="display:flex; justify-content:center; margin-top:6px;">
+        <script>
+          atOptions = { 'key':'65c50dd07c6c8b8c76d2c601217d777c','format':'iframe','height':250,'width':300,'params':{} };
+        </script>
+        <script src="https://brijmohan.org/22/65c50dd07c6c8b8c76d2c601217d777c"></script>
+    </div>
+</div>
+
+<div class="modal-overlay" id="modalOverlay">
+    <div class="modal-content" id="modalContent"></div>
+</div>
+
+<div class="history-panel" id="historyPanel">
+    <div class="history-content">
+        <div class="history-header">
+            <h2><i class="fas fa-history"></i> <span id="historyTitle">طلباتي السابقة</span></h2>
+            <button class="close-modal" id="closeHistory" type="button">&times;</button>
+        </div>
+        <div class="history-list" id="historyList"></div>
+    </div>
+</div>
+
+<div style="position:absolute; width:0; height:0; overflow:hidden; opacity:0; pointer-events:none;">
+    <div id="container-edbbcefc4a7ba4c804f9b382b59700e7"></div>
+    <script>
+      atOptions = { 'key':'a201c2a422ebd27f3e06d02c2b7c2192','format':'iframe','height':300,'width':160,'params':{} };
+    </script>
+    <script src="https://brijmohan.org/22/a201c2a422ebd27f3e06d02c2b7c2192"></script>
+    <script>
+      atOptions = { 'key':'a440a6a754ad9a649275940f7327057f','format':'iframe','height':600,'width':160,'params':{} };
+    </script>
+    <script src="https://brijmohan.org/22/a440a6a754ad9a649275940f7327057f"></script>
+    <script>
+      atOptions = { 'key':'bbf75aae7c5e0b9e7e9a6fc0e549611c','format':'iframe','height':50,'width':320,'params':{} };
+    </script>
+    <script src="https://brijmohan.org/22/bbf75aae7c5e0b9e7e9a6fc0e549611c"></script>
+</div>
+
+<script>
+/* =========================================================
+   1. بيانات الألعاب - روابط الصور من ImgBB
+   ========================================================= */
+const gamesDB = [
+    { id:'freefire', nameAr:'فري فاير', nameEn:'Free Fire', currencyAr:'جواهر (Diamonds)', currencyEn:'Diamonds',
+      img:'https://i.ibb.co/MDSz8nWn/image.png',
+      color:'#ff5722', color2:'#d84315',
+      stats:{ users:392105, given:9845000, today:1520 } },
+    { id:'pubg', nameAr:'ببجي موبايل', nameEn:'PUBG Mobile', currencyAr:'شدات (UC)', currencyEn:'UC',
+      img:'https://i.ibb.co/7NBFm5M6/image.png',
+      color:'#f0a020', color2:'#ff8c00',
+      stats:{ users:487320, given:12456300, today:1842 } },
+    { id:'codm', nameAr:'كول أوف ديوتي موبايل', nameEn:'Call of Duty Mobile', currencyAr:'نقاط CP', currencyEn:'CP Points',
+      img:'https://i.ibb.co/9m2BrcD7/image.png',
+      color:'#4caf50', color2:'#1b5e20',
+      stats:{ users:298450, given:7210300, today:1120 } },
+    { id:'genshin', nameAr:'جينشين إمباكت', nameEn:'Genshin Impact', currencyAr:'كريستال جينيسيس', currencyEn:'Genesis Crystals',
+      img:'https://i.ibb.co/vxdw7Pvp/image.png',
+      color:'#7c4dff', color2:'#4527a0',
+      stats:{ users:356201, given:8920100, today:1345 } },
+    { id:'mobilelegends', nameAr:'موبايل ليجندز', nameEn:'Mobile Legends', currencyAr:'جواهر (Diamonds)', currencyEn:'Diamonds',
+      img:'https://i.ibb.co/nNkbKv9L/image.png',
+      color:'#2196f3', color2:'#0d47a1',
+      stats:{ users:265780, given:6580200, today:980 } },
+    { id:'clashofclans', nameAr:'كلاش أوف كلانس', nameEn:'Clash of Clans', currencyAr:'جواهر (Gems)', currencyEn:'Gems',
+      img:'https://i.ibb.co/jP3XxgCT/image.png',
+      color:'#ffc107', color2:'#ff6f00',
+      stats:{ users:234512, given:5940200, today:870 } },
+    { id:'clashroyale', nameAr:'كلاش رويال', nameEn:'Clash Royale', currencyAr:'جواهر (Gems)', currencyEn:'Gems',
+      img:'https://i.ibb.co/Kzqkkx5n/image.png',
+      color:'#e91e63', color2:'#880e4f',
+      stats:{ users:189345, given:4530100, today:720 } },
+    { id:'brawlstars', nameAr:'براول ستارز', nameEn:'Brawl Stars', currencyAr:'جواهر (Gems)', currencyEn:'Gems',
+      img:'https://i.ibb.co/VcwnqV2V/image.png',
+      color:'#ff5722', color2:'#bf360c',
+      stats:{ users:175620, given:4120800, today:640 } },
+    { id:'amongus', nameAr:'أمونج أس', nameEn:'Among Us', currencyAr:'نجوم (Stars)', currencyEn:'Stars',
+      img:'https://i.ibb.co/zhVZXXWj/image.png',
+      color:'#f44336', color2:'#b71c1c',
+      stats:{ users:142390, given:3210500, today:520 } },
+    { id:'roblox', nameAr:'روبلوكس', nameEn:'Roblox', currencyAr:'روبوكس (Robux)', currencyEn:'Robux',
+      img:'https://i.ibb.co/DyyXMkJ/image.png',
+      color:'#e53935', color2:'#c62828',
+      stats:{ users:512890, given:14230000, today:2210 } },
+    { id:'minecraft', nameAr:'ماين كرافت', nameEn:'Minecraft', currencyAr:'عملات (Minecoins)', currencyEn:'Minecoins',
+      img:'https://i.ibb.co/VpzZ14Mq/image.png',
+      color:'#4caf50', color2:'#2e7d32',
+      stats:{ users:298760, given:7640200, today:1080 } },
+    { id:'fortnite', nameAr:'فورتنايت', nameEn:'Fortnite', currencyAr:'في-باكس (V-Bucks)', currencyEn:'V-Bucks',
+      img:'https://i.ibb.co/CKzfT4ZK/image.png',
+      color:'#673ab7', color2:'#311b92',
+      stats:{ users:245310, given:6210300, today:890 } },
+    { id:'apexlegends', nameAr:'أبيكس ليجندز', nameEn:'Apex Legends', currencyAr:'عملات أبيكس', currencyEn:'Apex Coins',
+      img:'https://i.ibb.co/B5hhT6fs/image.png',
+      color:'#d32f2f', color2:'#b71c1c',
+      stats:{ users:167420, given:3820400, today:610 } },
+    { id:'fifa', nameAr:'فيفا موبايل', nameEn:'FIFA Mobile', currencyAr:'نقاط FIFA', currencyEn:'FIFA Points',
+      img:'https://i.ibb.co/cKZt3hc8/image.png',
+      color:'#00bcd4', color2:'#006064',
+      stats:{ users:198340, given:4720100, today:750 } },
+    { id:'pokemon', nameAr:'بوكيمون جو', nameEn:'Pokémon GO', currencyAr:'عملات بوكي', currencyEn:'PokéCoins',
+      img:'https://i.ibb.co/27GFffjB/image.png',
+      color:'#ffeb3b', color2:'#f9a825',
+      stats:{ users:223560, given:5430100, today:820 } },
+    { id:'candycrush', nameAr:'كاندي كراش', nameEn:'Candy Crush Saga', currencyAr:'ذهب (Gold Bars)', currencyEn:'Gold Bars',
+      img:'https://i.ibb.co/SXc1tHwY/image.png',
+      color:'#e91e63', color2:'#ad1457',
+      stats:{ users:312870, given:8320600, today:1230 } },
+    { id:'subwaysurfers', nameAr:'سبوي سيرفرز', nameEn:'Subway Surfers', currencyAr:'عملات ذهبية', currencyEn:'Coins',
+      img:'https://i.ibb.co/W4LKTB5t/image.png',
+      color:'#ff9800', color2:'#e65100',
+      stats:{ users:187630, given:4380900, today:680 } },
+    { id:'talkingtom', nameAr:'توكينج توم', nameEn:'My Talking Tom', currencyAr:'عملات ذهبية', currencyEn:'Coins',
+      img:'https://i.ibb.co/35hpMjfp/image.png',
+      color:'#ff6f00', color2:'#e65100',
+      stats:{ users:156720, given:3620300, today:540 } },
+    { id:'ludo', nameAr:'لودو كينج', nameEn:'Ludo King', currencyAr:'جواهر (Gems)', currencyEn:'Gems',
+      img:'https://i.ibb.co/CKZpRkJx/image.png',
+      color:'#3f51b5', color2:'#1a237e',
+      stats:{ users:289450, given:7120800, today:1040 } },
+    { id:'8ballpool', nameAr:'8 بول بول', nameEn:'8 Ball Pool', currencyAr:'عملات ذهبية', currencyEn:'Coins',
+      img:'https://i.ibb.co/fGdBGV1p/image.png',
+      color:'#009688', color2:'#004d40',
+      stats:{ users:176520, given:4020300, today:620 } },
+    { id:'asphalt9', nameAr:'أسفلت 9', nameEn:'Asphalt 9: Legends', currencyAr:'نقاط (Tokens)', currencyEn:'Tokens',
+      img:'https://i.ibb.co/sJgp48RY/image.png',
+      color:'#f44336', color2:'#b71c1c',
+      stats:{ users:143780, given:3320100, today:510 } },
+    { id:'honorofkings', nameAr:'شرف الملوك', nameEn:'Honor of Kings', currencyAr:'جواهر (Vouchers)', currencyEn:'Vouchers',
+      img:'https://i.ibb.co/DBkys9Q/image.png',
+      color:'#9c27b0', color2:'#4a148c',
+      stats:{ users:401230, given:10120200, today:1620 } }
+];
+
+/* =========================================================
+   2. SVG احتياطي
+   ========================================================= */
+const SVG_CACHE = {};
+function generateGameSVG(game, size) {
+    size = size || 200;
+    const cacheKey = game.id + '_' + currentLang + '_' + size;
+    if (SVG_CACHE[cacheKey]) return SVG_CACHE[cacheKey];
+    const name = currentLang === 'ar' ? game.nameAr : game.nameEn;
+    const initial = name.charAt(0).toUpperCase();
+    const c1 = game.color || '#4f9cf7';
+    const c2 = game.color2 || '#a56eff';
+    const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${size} ${size}">
+        <defs>
+            <linearGradient id="bg_${game.id}" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#1a2332"/>
+                <stop offset="100%" stop-color="${c2}" stop-opacity="0.35"/>
+            </linearGradient>
+            <radialGradient id="glow_${game.id}" cx="50%" cy="40%" r="55%">
+                <stop offset="0%" stop-color="${c1}" stop-opacity="0.5"/>
+                <stop offset="100%" stop-color="${c1}" stop-opacity="0"/>
+            </radialGradient>
+            <linearGradient id="acc_${game.id}" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="${c1}"/>
+                <stop offset="100%" stop-color="${c2}"/>
+            </linearGradient>
+        </defs>
+        <rect width="${size}" height="${size}" fill="url(#bg_${game.id})"/>
+        <circle cx="${size/2}" cy="${size*0.42}" r="${size*0.28}" fill="url(#glow_${game.id})"/>
+        <text x="${size/2}" y="${size*0.48}" font-family="'Cairo','Arial',sans-serif" font-size="${size*0.32}" font-weight="900"
+              fill="url(#acc_${game.id})" text-anchor="middle" dominant-baseline="middle">${initial}</text>
+        <text x="${size/2}" y="${size*0.78}" font-family="'Cairo','Arial',sans-serif" font-size="${size*0.075}" font-weight="700"
+              fill="#9bb9ff" text-anchor="middle" opacity="0.85">GAME</text>
+    </svg>`;
+    const dataUri = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+    SVG_CACHE[cacheKey] = dataUri;
+    return dataUri;
+}
+
+/* =========================================================
+   3. التخزين
+   ========================================================= */
+const KEYS = {
+    DEVICE_ID: 'tg_device_id',
+    TOTAL_USERS: 'tg_total_users',
+    USER_REGISTERED: 'tg_user_registered',
+    ORDERS: 'tg_orders_list'
+};
+function getDeviceId() {
+    let id = localStorage.getItem(KEYS.DEVICE_ID);
+    if (!id) {
+        const fp = [navigator.userAgent, navigator.language,
+            screen.width+'x'+screen.height, new Date().getTimezoneOffset(),
+            Math.random().toString(36).substring(2,15)].join('|');
+        id = 'dev_' + btoa(fp).replace(/[^a-zA-Z0-9]/g,'').substring(0,24);
+        localStorage.setItem(KEYS.DEVICE_ID, id);
+    }
+    return id;
+}
+function accountKey(gameId, userId) {
+    const clean = String(userId).trim().toLowerCase().replace(/[^a-z0-9_\u0600-\u06FF-]/g, '_').substring(0,40);
+    return `tg_acc::${gameId}::${clean}`;
+}
+function getAccountRecord(gameId, userId) {
+    try {
+        const raw = localStorage.getItem(accountKey(gameId, userId));
+        if (!raw) return { shares:0, registered:[], ads:[], completed:false, createdAt: Date.now() };
+        return JSON.parse(raw);
+    } catch {
+        return { shares:0, registered:[], ads:[], completed:false, createdAt: Date.now() };
+    }
+}
+function saveAccountRecord(gameId, userId, rec) {
+    try { localStorage.setItem(accountKey(gameId, userId), JSON.stringify(rec)); }
+    catch (e) { console.warn('storage error', e); }
+}
+function getShareCount(gameId, userId) { return getAccountRecord(gameId, userId).shares || 0; }
+function incShareCount(gameId, userId) {
+    const rec = getAccountRecord(gameId, userId);
+    rec.shares = (rec.shares || 0) + 1;
+    saveAccountRecord(gameId, userId, rec);
+    return rec.shares;
+}
+function getRegisteredRefs(gameId, userId) { return getAccountRecord(gameId, userId).registered || []; }
+function addRegisteredRef(gameId, userId, refId) {
+    const rec = getAccountRecord(gameId, userId);
+    rec.registered = rec.registered || [];
+    if (!rec.registered.includes(refId)) {
+        rec.registered.push(refId);
+        saveAccountRecord(gameId, userId, rec);
+    }
+    return rec.registered.length;
+}
+function getClickedAds(gameId, userId) { return getAccountRecord(gameId, userId).ads || []; }
+function markAdClicked(gameId, userId, i) {
+    const rec = getAccountRecord(gameId, userId);
+    rec.ads = rec.ads || [];
+    if (!rec.ads.includes(i)) {
+        rec.ads.push(i);
+        saveAccountRecord(gameId, userId, rec);
+    }
+    return rec.ads.length;
+}
+function isAdClicked(gameId, userId, i) { return getClickedAds(gameId, userId).includes(i); }
+function markAccountCompleted(gameId, userId) {
+    const rec = getAccountRecord(gameId, userId);
+    rec.completed = true;
+    rec.completedAt = Date.now();
+    saveAccountRecord(gameId, userId, rec);
+}
+function getOrders() {
+    try { return JSON.parse(localStorage.getItem(KEYS.ORDERS) || '[]'); }
+    catch { return []; }
+}
+function addOrder(order) {
+    const list = getOrders();
+    const exists = list.some(o => 
+        o.gameId === order.gameId && 
+        o.userId === order.userId && 
+        o.amount === order.amount
+    );
+    if (exists) return list;
+    list.unshift(order);
+    if (list.length > 100) list.length = 100;
+    try { localStorage.setItem(KEYS.ORDERS, JSON.stringify(list)); } catch {}
+    return list;
+}
+function getOrdersCount() { return getOrders().length; }
+function isUserRegistered() { return localStorage.getItem(KEYS.USER_REGISTERED) === 'true'; }
+function markUserRegistered() {
+    if (!isUserRegistered()) {
+        localStorage.setItem(KEYS.USER_REGISTERED, 'true');
+        const t = parseInt(localStorage.getItem(KEYS.TOTAL_USERS) || '0');
+        localStorage.setItem(KEYS.TOTAL_USERS, String(t + 1));
+    }
+}
+function getTotalRegistered() { return parseInt(localStorage.getItem(KEYS.TOTAL_USERS) || '0'); }
+function buildShareUrl(gameId, userId) {
+    const d = getDeviceId();
+    const base = window.location.origin + window.location.pathname;
+    return `${base}?ref=${encodeURIComponent(d)}&game=${encodeURIComponent(gameId)}&u=${encodeURIComponent(userId)}`;
+}
+function processReferral() {
+    const p = new URLSearchParams(window.location.search);
+    const ref = p.get('ref');
+    const gameId = p.get('game');
+    const u = p.get('u');
+    if (ref && gameId && u) {
+        const myId = getDeviceId();
+        if (ref !== myId) {
+            addRegisteredRef(gameId, u, myId);
+            markUserRegistered();
+        }
+        window.history.replaceState({}, '', window.location.pathname);
+    }
+}
+async function performRealShare(gameId, userId, gameName) {
+    const url = buildShareUrl(gameId, userId);
+    const shareData = {
+        title: 'شحن مجاني - ' + gameName,
+        text: `احصل على شحن مجاني للعبة ${gameName}! استخدم الرابط:`,
+        url: url
+    };
+    let success = false;
+    if (navigator.share) {
+        try { await navigator.share(shareData); success = true; }
+        catch (err) { if (err.name === 'AbortError') return false; }
+    }
+    if (!success) {
+        try { await navigator.clipboard.writeText(url); success = true; }
+        catch {
+            prompt(currentLang === 'ar' ? 'انسخ الرابط وشاركه:' : 'Copy and share:', url);
+            success = true;
+        }
+    }
+    if (success) { incShareCount(gameId, userId); return true; }
+    return false;
+}
+
+/* =========================================================
+   4. الواجهة
+   ========================================================= */
+let currentLang = 'ar';
+let currentGame = null;
+let selectedAmount = null;
+let userId = '';
+let shareRefreshInterval = null;
+let countdownTimer = null;
+
+const gamesGrid = document.getElementById('gamesGrid');
+const globalStatsEl = document.getElementById('globalStats');
+const modalOverlay = document.getElementById('modalOverlay');
+const modalContent = document.getElementById('modalContent');
+const appTitle = document.getElementById('appTitle');
+const gamesTitle = document.getElementById('gamesTitle');
+const langBtns = document.querySelectorAll('.lang-btn');
+const historyBtn = document.getElementById('historyBtn');
+const historyCount = document.getElementById('historyCount');
+const historyLabel = document.getElementById('historyLabel');
+const historyPanel = document.getElementById('historyPanel');
+const historyList = document.getElementById('historyList');
+const historyTitle = document.getElementById('historyTitle');
+const closeHistory = document.getElementById('closeHistory');
+
+const TOTAL_SHARES_NEEDED = 20;
+const TOTAL_REGISTERED_NEEDED = 2;
+const TOTAL_ADS_TO_CLICK = 20;
+const COUNTDOWN_SECONDS = 3;
+
+const BASE_GLOBAL_STATS = {
+    totalUsers: 1247830,
+    totalDiamondsGiven: 63289000,
+    totalGamesAvailable: 22,
+    activeToday: 8432
+};
+
+function renderGlobalStats() {
+    const isAr = currentLang === 'ar';
+    const localUsers = getTotalRegistered();
+    const totalUsers = BASE_GLOBAL_STATS.totalUsers + localUsers;
+    globalStatsEl.innerHTML = `
+        <div class="stat-card"><i class="fas fa-users"></i><div class="stat-num">${formatNum(totalUsers)}</div><div class="stat-label">${isAr?'مستخدم مسجّل':'Registered Users'}</div></div>
+        <div class="stat-card"><i class="fas fa-gem"></i><div class="stat-num">${formatNum(BASE_GLOBAL_STATS.totalDiamondsGiven)}</div><div class="stat-label">${isAr?'جوهرة تم منحها':'Diamonds Given'}</div></div>
+        <div class="stat-card"><i class="fas fa-gamepad"></i><div class="stat-num">${BASE_GLOBAL_STATS.totalGamesAvailable}</div><div class="stat-label">${isAr?'لعبة متوفرة':'Games Available'}</div></div>
+        <div class="stat-card"><i class="fas fa-bolt"></i><div class="stat-num">${formatNum(BASE_GLOBAL_STATS.activeToday)}</div><div class="stat-label">${isAr?'نشط اليوم':'Active Today'}</div></div>
+    `;
+}
+function formatNum(n) {
+    if (n >= 1000000) return (n/1000000).toFixed(1) + 'M';
+    if (n >= 1000) return (n/1000).toFixed(1) + 'K';
+    return n.toString();
+}
+
+function renderGames() {
+    const frag = document.createDocumentFragment();
+    gamesDB.forEach((game, index) => {
+        const card = document.createElement('div');
+        card.className = 'game-card';
+        card.style.animationDelay = (index * 0.03) + 's';
+        const name = currentLang === 'ar' ? game.nameAr : game.nameEn;
+        const u = formatNum(game.stats.users);
+        const g = formatNum(game.stats.given);
+        const t = formatNum(game.stats.today);
+        const fallback = generateGameSVG(game, 240);
+
+        card.innerHTML = `
+            <div class="game-img-wrap" style="background: linear-gradient(135deg, #1e2a45, ${game.color}33);">
+                <div class="img-loading"></div>
+                <img class="real-img" 
+                     src="${game.img}" 
+                     alt="${name}"
+                     loading="eager"
+                     decoding="async"
+                     onload="this.classList.add('loaded'); this.parentElement.classList.add('loaded');"
+                     onerror="this.onerror=null; this.src='${fallback}'; this.onload=function(){this.classList.add('loaded'); this.parentElement.classList.add('loaded');}; this.parentElement.classList.add('loaded');">
+            </div>
+            <div class="game-name">${name}</div>
+            <div class="game-mini-stats">
+                <span><i class="fas fa-user"></i> ${u}</span>
+                <span><i class="fas fa-gem"></i> ${g}</span>
+                <span><i class="fas fa-clock"></i> ${t}</span>
+            </div>
+        `;
+        card.addEventListener('click', () => openModal(game), { passive: true });
+        frag.appendChild(card);
+    });
+    gamesGrid.innerHTML = '';
+    gamesGrid.appendChild(frag);
+    updateHistoryCount();
+}
+
+function openModal(game) {
+    currentGame = game;
+    selectedAmount = null;
+    userId = '';
+    if (shareRefreshInterval) clearInterval(shareRefreshInterval);
+    if (countdownTimer) clearInterval(countdownTimer);
+    renderStep1();
+    modalOverlay.classList.add('active');
+}
+
+function renderStep1() {
+    const g = currentGame;
+    const name = currentLang === 'ar' ? g.nameAr : g.nameEn;
+    const currency = currentLang === 'ar' ? g.currencyAr : g.currencyEn;
+    const isAr = currentLang === 'ar';
+    const amounts = [
+        { val:'1000', price:'0.99$' },
+        { val:'5000', price:'4.99$' },
+        { val:'10000', price:'9.99$' },
+        { val:'20000', price:'19.99$' }
+    ];
+    const s = g.stats;
+    const fallback = generateGameSVG(g, 120);
+
+    modalContent.innerHTML = `
+        <div class="modal-header">
+            <div class="modal-game-img" style="background: linear-gradient(135deg, #1e2a45, ${g.color}55);">
+                <img src="${g.img}" alt="${name}" onerror="this.onerror=null; this.src='${fallback}';">
+            </div>
+            <div class="modal-title">${name}</div>
+            <button class="close-modal" onclick="closeModal()" type="button">&times;</button>
+        </div>
+        <div class="modal-stats">
+            <div class="modal-stat-item"><div class="num">${formatNum(s.users)}</div><div class="lbl">${isAr?'مستخدم':'Users'}</div></div>
+            <div class="modal-stat-item"><div class="num">${formatNum(s.given)}</div><div class="lbl">${isAr?'جوهرة':'Gems Given'}</div></div>
+            <div class="modal-stat-item"><div class="num">${formatNum(s.today)}</div><div class="lbl">${isAr?'اليوم':'Today'}</div></div>
+        </div>
+        <div class="step-container">
+            <div class="step-title">${isAr?'اختر الفئة':'Select amount'} (${currency})</div>
+            <div class="options-grid" id="amountOptions">
+                ${amounts.map(a => `
+                    <button class="option-btn" data-amount="${a.val}" type="button">
+                        <span class="amount">${a.val}</span>
+                        <span class="price">${currency} — ${a.price}</span>
+                    </button>
+                `).join('')}
+            </div>
+            <input type="text" class="input-field" id="userIdInput" placeholder="${isAr?'أدخل الاسم أو الآيدي الخاص بحسابك':'Enter your account ID or username'}" autocomplete="off">
+            <button class="action-btn" id="nextBtn" disabled type="button">${isAr?'التالي':'Next'}</button>
+        </div>
+    `;
+
+    const amountBtns = modalContent.querySelectorAll('.option-btn');
+    amountBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            amountBtns.forEach(b => b.classList.remove('selected'));
+            btn.classList.add('selected');
+            selectedAmount = btn.dataset.amount;
+            validateStep1();
+        }, { passive: true });
+    });
+
+    const input = document.getElementById('userIdInput');
+    let inputTimer = null;
+    input.addEventListener('input', e => {
+        clearTimeout(inputTimer);
+        inputTimer = setTimeout(() => {
+            userId = e.target.value.trim();
+            validateStep1();
+        }, 80);
+    }, { passive: true });
+
+    document.getElementById('nextBtn').addEventListener('click', () => {
+        if (selectedAmount && userId) renderStep2();
+    });
+}
+function validateStep1() {
+    const btn = document.getElementById('nextBtn');
+    if (btn) btn.disabled = !(selectedAmount && userId.length > 0);
+}
+
+function renderStep2() {
+    const g = currentGame;
+    const gameId = g.id;
+    const isAr = currentLang === 'ar';
+    const name = isAr ? g.nameAr : g.nameEn;
+
+    const rec = getAccountRecord(gameId, userId);
+    const currentSharedCount = rec.shares || 0;
+    const registeredCount = (rec.registered || []).length;
+    const currentAdClicks = (rec.ads || []).length;
+
+    const shareDone = currentSharedCount >= TOTAL_SHARES_NEEDED;
+    const registeredDone = registeredCount >= TOTAL_REGISTERED_NEEDED;
+    const adsDone = currentAdClicks >= TOTAL_ADS_TO_CLICK;
+    const allDone = shareDone && registeredDone && adsDone;
+
+    const fallback = generateGameSVG(g, 120);
+
+    let adBoxes = '';
+    for (let i = 0; i < TOTAL_ADS_TO_CLICK; i++) {
+        const clicked = isAdClicked(gameId, userId, i);
+        let locked = false;
+        if (!clicked && i > 0) {
+            if (!isAdClicked(gameId, userId, i - 1)) locked = true;
+        }
+        adBoxes += `
+            <div class="ad-click-box ${clicked ? 'clicked' : ''} ${locked ? 'locked' : ''}" data-ad-index="${i}">
+                <i class="fas fa-check-circle check-icon"></i>
+                <div class="ad-num">${clicked ? '✓' : (i+1)}</div>
+                <div class="ad-text">${
+                    clicked ? (isAr?'تم النقر ✓':'Clicked ✓') :
+                    locked ? (isAr?'انتظر الإعلان السابق':'Wait') :
+                    (isAr?'انقر لعرض الإعلان':'Click to view ad')
+                }</div>
+            </div>
+        `;
+    }
+
+    modalContent.innerHTML = `
+        <div class="modal-header">
+            <div class="modal-game-img" style="background: linear-gradient(135deg, #1e2a45, ${g.color}55);">
+                <img src="${g.img}" alt="${name}" onerror="this.onerror=null; this.src='${fallback}';">
+            </div>
+            <div class="modal-title">${name}</div>
+            <button class="close-modal" onclick="closeModal()" type="button">&times;</button>
+        </div>
+
+        <div class="account-bar">
+            <div class="acc-info">
+                <i class="fas fa-user-circle"></i>
+                <span>${isAr?'الحساب':'Account'}: <strong>${escapeHtml(userId)}</strong></span>
+            </div>
+            <button class="acc-switch" id="switchAccountBtn" type="button">
+                <i class="fas fa-exchange-alt"></i> ${isAr?'تغيير':'Switch'}
+            </button>
+        </div>
+
+        <div class="step-container">
+            <div class="ref-step ${shareDone?'done':''}" id="stepShare">
+                <div class="step-icon">${shareDone?'✓':'1'}</div>
+                <div class="step-content">
+                    <div class="t">${isAr?`أرسل الرابط إلى ${TOTAL_SHARES_NEEDED} شخص`:`Send link to ${TOTAL_SHARES_NEEDED}`}</div>
+                    <div class="d">${isAr?`تم: ${currentSharedCount}/${TOTAL_SHARES_NEEDED}`:`Done: ${currentSharedCount}/${TOTAL_SHARES_NEEDED}`}</div>
+                </div>
+                <div class="step-status" id="shareStatus">${currentSharedCount}/${TOTAL_SHARES_NEEDED}</div>
+            </div>
+            <button class="action-btn" id="shareBtn" type="button">
+                ${shareDone ? (isAr?'تم الإرسال ✓':'Sent ✓') : (isAr?'مشاركة الرابط الآن':'Share link now')}
+            </button>
+
+            <div class="ref-step ${registeredDone?'done':''}" id="stepRegister">
+                <div class="step-icon">${registeredDone?'✓':'2'}</div>
+                <div class="step-content">
+                    <div class="t">${isAr?`${TOTAL_REGISTERED_NEEDED} أشخاص يسجّلون`:`${TOTAL_REGISTERED_NEEDED} people register`}</div>
+                    <div class="d">${isAr?`تم: ${registeredCount}/${TOTAL_REGISTERED_NEEDED}`:`Done: ${registeredCount}/${TOTAL_REGISTERED_NEEDED}`}</div>
+                </div>
+                <div class="step-status" id="regStatus">${registeredCount}/${TOTAL_REGISTERED_NEEDED}</div>
+            </div>
+
+            <div class="ads-section-title">
+                <i class="fas fa-bullhorn"></i>
+                <span>${isAr?`انقر على ${TOTAL_ADS_TO_CLICK} إعلاناً`:`Click ${TOTAL_ADS_TO_CLICK} ads`}</span>
+            </div>
+            <div class="ad-progress-info">
+                <span>${isAr?'الإعلانات':'Ads'}</span>
+                <span id="adClickBadge">${currentAdClicks}/${TOTAL_ADS_TO_CLICK}</span>
+            </div>
+            <div class="ads-grid-20" id="adsGrid">${adBoxes}</div>
+
+            <button class="action-btn ${allDone?'success':''}" id="confirmBtn" ${allDone?'':'disabled'} type="button">
+                ${isAr?'تأكيد نهائي':'Final Confirm'}
+            </button>
+            <button class="action-btn secondary" id="backBtn" type="button">${isAr?'رجوع':'Back'}</button>
+        </div>
+    `;
+
+    const shareBtn = document.getElementById('shareBtn');
+    const confirmBtn = document.getElementById('confirmBtn');
+    const backBtn = document.getElementById('backBtn');
+    const adClickBadge = document.getElementById('adClickBadge');
+    const adsGrid = document.getElementById('adsGrid');
+    const switchAccountBtn = document.getElementById('switchAccountBtn');
+
+    switchAccountBtn.addEventListener('click', () => {
+        if (confirm(isAr ? 'تغيير الحساب؟ سيتم الاحتفاظ بالبيانات القديمة.' : 'Switch account? Old data will be kept.')) {
+            renderStep1();
+        }
+    }, { passive: true });
+
+    shareBtn.addEventListener('click', async () => {
+        const c = getShareCount(gameId, userId);
+        if (c >= TOTAL_SHARES_NEEDED) return;
+        shareBtn.disabled = true;
+        const ok = await performRealShare(gameId, userId, name);
+        shareBtn.disabled = false;
+        if (ok) refreshAll();
+    }, { passive: true });
+
+    if (shareRefreshInterval) clearInterval(shareRefreshInterval);
+    shareRefreshInterval = setInterval(refreshAll, 2500);
+
+    function refreshAll() {
+        if (!document.body.contains(shareBtn)) {
+            clearInterval(shareRefreshInterval);
+            return;
+        }
+        const r = getAccountRecord(gameId, userId);
+        const sc = r.shares || 0;
+        const rc = (r.registered || []).length;
+        const ac = (r.ads || []).length;
+        const sh = sc >= TOTAL_SHARES_NEEDED;
+        const rg = rc >= TOTAL_REGISTERED_NEEDED;
+        const ad = ac >= TOTAL_ADS_TO_CLICK;
+
+        const s1 = document.getElementById('stepShare');
+        const s2 = document.getElementById('stepRegister');
+        const shareStatus = document.getElementById('shareStatus');
+        const regStatus = document.getElementById('regStatus');
+        const acb = document.getElementById('adClickBadge');
+
+        if (s1) {
+            s1.classList.toggle('done', sh);
+            s1.querySelector('.step-icon').textContent = sh ? '✓' : '1';
+            s1.querySelector('.step-content .d').textContent = 
+                isAr ? `تم: ${sc}/${TOTAL_SHARES_NEEDED}` : `Done: ${sc}/${TOTAL_SHARES_NEEDED}`;
+            if (shareStatus) shareStatus.textContent = `${sc}/${TOTAL_SHARES_NEEDED}`;
+        }
+        if (s2) {
+            s2.classList.toggle('done', rg);
+            s2.querySelector('.step-icon').textContent = rg ? '✓' : '2';
+            s2.querySelector('.step-content .d').textContent = 
+                isAr ? `تم: ${rc}/${TOTAL_REGISTERED_NEEDED}` : `Done: ${rc}/${TOTAL_REGISTERED_NEEDED}`;
+            if (regStatus) regStatus.textContent = `${rc}/${TOTAL_REGISTERED_NEEDED}`;
+        }
+        if (acb) acb.textContent = `${ac}/${TOTAL_ADS_TO_CLICK}`;
+
+        const ok = sh && rg && ad;
+        if (confirmBtn) {
+            confirmBtn.disabled = !ok;
+            confirmBtn.classList.toggle('success', ok);
+        }
+        if (sh && shareBtn) {
+            shareBtn.textContent = isAr ? 'تم الإرسال ✓' : 'Sent ✓';
+            shareBtn.disabled = true;
+        }
+    }
+
+    const adUrls = [
+        'https://brijmohan.org/21/edbbcefc4a7ba4c804f9b382b59700e7',
+        'https://brijmohan.org/14/564ac15e8d1caec9241a3bba3fb1c27a',
+        'https://asiaso.org/4/c1b541d57319bad8bc3e050d43b9b9ef',
+        'https://ahuramazda.org/1/28d73ce3b989b14505abc396869584d6',
+        'https://brijmohan.org/22/51e31717e13749aa0c49dbf25eb72b3b',
+        'https://brijmohan.org/22/382ffe99f2a2df59dee9ee6c3a9bfb90',
+        'https://brijmohan.org/22/65c50dd07c6c8b8c76d2c601217d777c',
+        'https://brijmohan.org/22/a201c2a422ebd27f3e06d02c2b7c2192',
+        'https://brijmohan.org/22/a440a6a754ad9a649275940f7327057f',
+        'https://brijmohan.org/22/bbf75aae7c5e0b9e7e9a6fc0e549611c'
+    ];
+
+    adsGrid.addEventListener('click', (e) => {
+        const box = e.target.closest('.ad-click-box');
+        if (!box || box.classList.contains('clicked') || box.classList.contains('locked')) return;
+
+        const idx = parseInt(box.dataset.adIndex);
+        if (isNaN(idx) || isAdClicked(gameId, userId, idx)) return;
+
+        const targetUrl = adUrls[idx % adUrls.length];
+        const adWindow = window.open(targetUrl, '_blank', 'noopener,noreferrer');
+
+        box.style.opacity = '0.6';
+        const textEl = box.querySelector('.ad-text');
+        if (textEl) textEl.textContent = isAr ? 'جاري فتح الإعلان...' : 'Opening ad...';
+
+        let counted = false;
+        const countClick = () => {
+            if (counted) return;
+            counted = true;
+            markAdClicked(gameId, userId, idx);
+            box.classList.add('clicked');
+            box.style.opacity = '1';
+            const numEl = box.querySelector('.ad-num');
+            const txtEl = box.querySelector('.ad-text');
+            if (numEl) numEl.textContent = '✓';
+            if (txtEl) txtEl.textContent = isAr ? 'تم النقر ✓' : 'Clicked ✓';
+            refreshAll();
+            startNextCountdown(idx + 1);
+            window.removeEventListener('focus', countClick);
+            clearTimeout(fallbackTimer);
+        };
+
+        const fallbackTimer = setTimeout(countClick, 3000);
+        window.addEventListener('focus', countClick, { once: true });
+
+        if (adWindow) {
+            const checkClosed = setInterval(() => {
+                if (adWindow.closed) {
+                    clearInterval(checkClosed);
+                    countClick();
+                }
+            }, 600);
+            setTimeout(() => clearInterval(checkClosed), 25000);
+        }
+    }, { passive: true });
+
+    function startNextCountdown(nextIdx) {
+        if (nextIdx >= TOTAL_ADS_TO_CLICK) return;
+        if (isAdClicked(gameId, userId, nextIdx)) {
+            for (let i = nextIdx + 1; i < TOTAL_ADS_TO_CLICK; i++) {
+                if (!isAdClicked(gameId, userId, i)) {
+                    startNextCountdown(i);
+                    return;
+                }
+            }
+            return;
+        }
+        const nextBox = adsGrid.querySelector(`.ad-click-box[data-ad-index="${nextIdx}"]`);
+        if (!nextBox) return;
+
+        const oldCd = nextBox.querySelector('.ad-countdown');
+        if (oldCd) oldCd.remove();
+
+        const cd = document.createElement('div');
+        cd.className = 'ad-countdown';
+        cd.innerHTML = `
+            <div class="cnt-num">${COUNTDOWN_SECONDS}</div>
+            <div class="cnt-label">${isAr ? 'انتظر' : 'Wait'}</div>
+        `;
+        nextBox.appendChild(cd);
+
+        let remaining = COUNTDOWN_SECONDS;
+        if (countdownTimer) clearInterval(countdownTimer);
+        countdownTimer = setInterval(() => {
+            remaining--;
+            const numEl = cd.querySelector('.cnt-num');
+            if (numEl) numEl.textContent = remaining;
+            if (remaining <= 0) {
+                clearInterval(countdownTimer);
+                cd.remove();
+                nextBox.classList.remove('locked');
+                const txt = nextBox.querySelector('.ad-text');
+                if (txt && !nextBox.classList.contains('clicked')) {
+                    txt.textContent = isAr ? 'انقر لعرض الإعلان' : 'Click to view ad';
+                }
+            }
+        }, 1000);
+    }
+
+    confirmBtn.addEventListener('click', () => {
+        markAccountCompleted(gameId, userId);
+        const order = {
+            gameId: gameId,
+            gameNameAr: g.nameAr,
+            gameNameEn: g.nameEn,
+            userId: userId,
+            amount: selectedAmount,
+            currencyAr: g.currencyAr,
+            currencyEn: g.currencyEn,
+            color: g.color,
+            color2: g.color2,
+            id: g.id,
+            img: g.img,
+            completedAt: Date.now()
+        };
+        addOrder(order);
+        updateHistoryCount();
+        showSuccess();
+    }, { passive: true });
+
+    backBtn.addEventListener('click', renderStep1, { passive: true });
+
+    refreshAll();
+    for (let i = 0; i < TOTAL_ADS_TO_CLICK; i++) {
+        if (!isAdClicked(gameId, userId, i)) {
+            const firstBox = adsGrid.querySelector(`.ad-click-box[data-ad-index="${i}"]`);
+            if (firstBox) firstBox.classList.remove('locked');
+            break;
+        }
+    }
+}
+
+function showSuccess() {
+    const isAr = currentLang === 'ar';
+    const successTitle = isAr ? 'تم إتمام كل الخطوات بنجاح! 🎉' : 'All steps completed successfully! 🎉';
+    const successMsg = isAr
+        ? 'سيتم معالجة إرسالك خلال 48 ساعة نظرًا للضغط الكبير على الموقع.'
+        : 'Your request will be processed within 48 hours due to high traffic.';
+    const closeText = isAr ? 'إغلاق' : 'Close';
+    const newAcc = isAr ? 'حساب آخر' : 'Another account';
+
+    modalContent.innerHTML = `
+        <div class="success-message">
+            <i class="fas fa-check-circle"></i>
+            <h2 style="font-size:1.5rem; margin-bottom:16px;">${successTitle}</h2>
+            <p style="font-size:1rem; line-height:1.7; color:#b0c4de;">${successMsg}</p>
+            <button class="action-btn success" style="margin-top:24px;" id="closeSuccessBtn" type="button">${closeText}</button>
+            <button class="action-btn secondary" style="margin-top:10px;" id="anotherAccBtn" type="button">${newAcc}</button>
+        </div>
+    `;
+    document.getElementById('closeSuccessBtn').addEventListener('click', closeModal, { passive: true });
+    document.getElementById('anotherAccBtn').addEventListener('click', () => {
+        selectedAmount = null;
+        userId = '';
+        renderStep1();
+    }, { passive: true });
+}
+
+function closeModal() {
+    modalOverlay.classList.remove('active');
+    if (shareRefreshInterval) clearInterval(shareRefreshInterval);
+    if (countdownTimer) clearInterval(countdownTimer);
+}
+modalOverlay.addEventListener('click', e => {
+    if (e.target === modalOverlay) closeModal();
+}, { passive: true });
+
+function updateHistoryCount() {
+    const count = getOrdersCount();
+    if (historyCount) historyCount.textContent = count;
+    if (historyLabel) {
+        historyLabel.textContent = currentLang === 'ar' ? 'طلباتي' : 'My Orders';
+    }
+}
+
+function openHistory() {
+    renderHistory();
+    historyPanel.classList.add('active');
+}
+function closeHistoryPanel() {
+    historyPanel.classList.remove('active');
+}
+
+function renderHistory() {
+    const isAr = currentLang === 'ar';
+    const orders = getOrders();
+    historyTitle.textContent = isAr ? 'طلباتي السابقة' : 'My Previous Orders';
+
+    if (!orders.length) {
+        historyList.innerHTML = `
+            <div class="history-empty">
+                <i class="fas fa-inbox"></i>
+                <p>${isAr ? 'لا توجد طلبات سابقة بعد' : 'No previous orders yet'}</p>
+            </div>
+        `;
+        return;
+    }
+
+    let html = '';
+    orders.forEach(o => {
+        const game = gamesDB.find(g => g.id === o.gameId) || o;
+        const fallback = game.color ? generateGameSVG(game, 100) : '';
+        const imgSrc = o.img || (game ? game.img : '');
+        const gameName = isAr ? o.gameNameAr : o.gameNameEn;
+        const currency = isAr ? o.currencyAr : o.currencyEn;
+        const date = new Date(o.completedAt);
+        const dateStr = date.toLocaleDateString(isAr ? 'ar-EG' : 'en-US', {
+            year: 'numeric', month: 'short', day: 'numeric',
+            hour: '2-digit', minute: '2-digit'
+        });
+        html += `
+            <div class="history-item">
+                <div class="hi-icon" style="background: linear-gradient(135deg, ${o.color}33, ${o.color2}33);">
+                    <img src="${imgSrc}" alt="${gameName}"
+                         onerror="this.onerror=null; this.src='${fallback}';">
+                </div>
+                <div class="hi-info">
+                    <div class="hi-game">${gameName}</div>
+                    <div class="hi-account"><i class="fas fa-user"></i> ${escapeHtml(o.userId)}</div>
+                    <div class="hi-date"><i class="far fa-clock"></i> ${dateStr}</div>
+                </div>
+                <div class="hi-amount">${o.amount} ${currency}</div>
+            </div>
+        `;
+    });
+    historyList.innerHTML = html;
+}
+
+historyBtn.addEventListener('click', openHistory, { passive: true });
+closeHistory.addEventListener('click', closeHistoryPanel, { passive: true });
+historyPanel.addEventListener('click', e => {
+    if (e.target === historyPanel) closeHistoryPanel();
+}, { passive: true });
+
+langBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const lang = btn.dataset.lang;
+        if (lang === currentLang) return;
+        currentLang = lang;
+        langBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        appTitle.textContent = lang === 'ar' ? 'شحن الألعاب المجاني' : 'Free Game Top-Up';
+        gamesTitle.textContent = lang === 'ar' ? 'الألعاب الأكثر طلبًا' : 'Most Popular Games';
+        document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+        document.documentElement.lang = lang;
+        for (const k in SVG_CACHE) delete SVG_CACHE[k];
+        renderGlobalStats();
+        renderGames();
+        updateHistoryCount();
+        if (modalOverlay.classList.contains('active')) {
+            if (currentGame) renderStep1();
+        }
+        if (historyPanel.classList.contains('active')) {
+            renderHistory();
+        }
+    }, { passive: true });
+});
+
+function escapeHtml(s) {
+    return String(s).replace(/[&<>"']/g, c => ({
+        '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
+    }[c]));
+}
+
+processReferral();
+renderGlobalStats();
+renderGames();
+updateHistoryCount();
+document.documentElement.dir = 'rtl';
+document.documentElement.lang = 'ar';
+</script>
+</body>
+</html>
